@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="ul">
+    <li>西施</li>
+    <li>貂蝉</li>
+    <li>贵妃</li>
+    <li>葛文</li>
+  </ul>
+
+  <script>
+    // 事件委托，把本来应该li应该做的事情，转交给父元素来做（事件冒泡）
+    var ul = document.getElementById('ul');
+    ul.onclick = function (e) {
+      // alert('123');
+      // 如何去找点击的li？
+      // console.log(this);  // this指向ul
+
+      // 当事件发生的时候，系统会把事件发生时候的一些数据传递给事件处理函数
+
+      // e 事件对象（事件参数）
+      // e.target   真正触发事件的对象  li
+      e.target.style.backgroundColor = 'red';
+    }
+
+
+    // ul.onclick = fn;
+    // function fn(e) {
+    // }
+  </script>
+</body>
+</html>
